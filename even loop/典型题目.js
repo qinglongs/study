@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-29 09:55:19
- * @LastEditTime: 2019-08-29 11:11:41
+ * @LastEditTime: 2019-08-29 17:03:22
  * @LastEditors: Please set LastEditors
  */
 // async function async1() {
@@ -80,24 +80,40 @@
 //   resolve();
 // }).then(function() {
 //   console.log('promise27'); //w2 //7
-// });
+// }); 
 
 // console.log('script end5'); //5
 
-new Promise((resolve,reject)=>{
-  console.log("promise1")
-  resolve()
-}).then(()=>{
-  console.log("then2")
-  new Promise((resolve,reject)=>{
-      console.log("promise3")
-      resolve()
-  }).then(()=>{
-      console.log("then5")
-  }).then(()=>{
-      console.log("then6")
-  })
-}).then(()=>{
-  console.log("then4")
+new Promise((resolve) => {
+  console.log("pro1")  // 1
+  setTimeout(function () {
+    new Promise((resolve) => {
+      console.log("pro6")
+      setTimeout(function () {
+        console.log("pro10")
+        resolve()
+      }, 300)
+    }).then(() => {
+      console.log("pro7")
+    })
+    console.log("pro2")
+    resolve()
+  }, 300)
+}).then(() => {
+  console.log("pro3")
 })
 
+new Promise((resolve) => {
+  console.log("pro4")
+  .
+  setTimeout(function () {
+    console.log("pro8")
+    resolve()
+  }, 300)
+}).then(() => {
+  console.log("pro5")
+})
+
+setTimeout(function () {
+  console.log("pro9")
+}, 300)
