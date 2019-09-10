@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-10 14:45:17
- * @LastEditTime: 2019-09-10 16:49:49
+ * @LastEditTime: 2019-09-10 16:53:03
  * @LastEditors: Please set LastEditors
  */
 
@@ -16,7 +16,7 @@
  * 5.once方法只监听一次，调用完毕后删除缓存数据(订阅一次)。 
  */
 
-//  实现on和 emit方法：11
+//  实现on和 emit方法：
 
 // 公众号对象：
 let eventEmitter = {}
