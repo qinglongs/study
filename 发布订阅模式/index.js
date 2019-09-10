@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-10 14:45:17
- * @LastEditTime: 2019-09-10 16:53:03
+ * @LastEditTime: 2019-09-10 16:54:17
  * @LastEditors: Please set LastEditors
  */
 
@@ -37,7 +37,7 @@ eventEmitter.on = function (event, fn) {
 eventEmitter.emit = function () {
   var _this = this;
   // 第一个参数是对应的event值，直接用数组的shift方法取出。
-  let event = [].shift.apply(arguments);  //arguments是函数内部的固有属性
+  let event = [].shift.call(arguments);  //arguments是函数内部的固有属性
   const fns = _this.list[event];
   
   // 如果缓存列表里没有fn就返回false
