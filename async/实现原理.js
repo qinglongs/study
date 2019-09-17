@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-17 15:00:00
- * @LastEditTime: 2019-09-17 15:10:22
+ * @LastEditTime: 2019-09-17 15:13:28
  * @LastEditors: Please set LastEditors
  */
 /**
@@ -24,6 +24,8 @@ function fn(args) {
 
 /**
  * 下面给出的spawn函数的实现，基本就是前文自动执行器的翻版：
+ * @method async方法实现原理
+ * @param {function} genf Generator函数
  */
 function spawn(genF) {
   return new Promise(function (resolve, reject) {
