@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-17 14:37:37
- * @LastEditTime: 2019-09-17 14:59:45
+ * @LastEditTime: 2019-09-17 18:26:48
  * @LastEditors: Please set LastEditors
  */
 /**
@@ -46,5 +46,5 @@ async function afunction(){
 
 /**
  * 3.await命令只能用在async函数之中，如果用在普通函数，就会报错。
- * 4.不能再forEach中使用async函数，正确的方法是咋for循环中使用。
+ * 4.不能再forEach中使用async函数，正确的方法是在for循环中使用。
  */

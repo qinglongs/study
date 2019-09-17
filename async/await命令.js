@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-17 11:32:26
- * @LastEditTime: 2019-09-17 14:21:46
+ * @LastEditTime: 2019-09-17 18:20:13
  * @LastEditors: Please set LastEditors
  */
 /**
@@ -11,10 +11,10 @@
  */
 
 async function foo() {
-  return await 123
+  return await 123 //await 可以去掉,因为await后买你跟的不是Promise对象
 }
 
-foo().then(res => console.log(res));
+foo().then(res => console.log(res));  //123
 
 /**
  * 上面代码中，await命令的参数是123，这时等同于return 123
@@ -103,7 +103,7 @@ rejectf()
 //  方法1：
 async function tryf() {
   try {
-    await Promise.reject('tryf出错了') 
+    await Promise.reject('tryf出错了')
   } catch (e) {
 
   }
@@ -120,4 +120,4 @@ async function catchf() {
   return await Promise.resolve('hello world');
 }
 
-catchf().then(v=>console.log(v));
+catchf().then(v => console.log(v));

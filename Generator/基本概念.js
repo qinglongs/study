@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-17 15:48:29
- * @LastEditTime: 2019-09-17 16:02:04
+ * @LastEditTime: 2019-09-17 17:36:02
  * @LastEditors: Please set LastEditors
  */
 /**
@@ -25,12 +25,16 @@
 function *helloWorldGenerator(){
   yield 'hello';
   yield 'world';
-  return 'ending';
+  return 'ending'; 
 }
 
 var hw = helloWorldGenerator();
 
-console.log(hw);
+console.log(hw.next());
+console.log(hw.next());
+console.log(hw.next());
+
+
 
 /**
  * 总结：调用Generator函数，返回一个遍历器对象，代表Generator函数的内部指针。

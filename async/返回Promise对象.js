@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-17 11:18:16
- * @LastEditTime: 2019-09-17 11:22:39
+ * @LastEditTime: 2019-09-17 18:19:39
  * @LastEditors: Please set LastEditors
  */
 /**
@@ -12,14 +12,20 @@
  * catch方法回调函数接收到
  */
 
- async function foo(){
-   return 'hello,word'
- }
+async function foo() {
+  return 'hello,word'
+}
 
- foo().then(res=>console.log(res));  //hello,word
+foo().then(res => console.log(res));  //hello,word
 
- async function bar(){
-   throw new Error('error');
- }
+async function bar() {
+  throw new Error('error');
+}
 
- bar().then(v=>console.log(v),e=>console.log(e));
+bar()
+  .then(v => console.log(v))
+  .catch(e => console.log(e));
+
+
+
+  

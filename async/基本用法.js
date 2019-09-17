@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-17 11:00:21
- * @LastEditTime: 2019-09-17 11:09:46
+ * @LastEditTime: 2019-09-17 17:52:41
  * @LastEditors: Please set LastEditors
  */
 /**
@@ -25,31 +25,31 @@
  * 1.指定多少毫秒后输出一个值：
  */
 
- async function timeout(ms){
-    new Promise((resolve)=>{
-     setTimeout(resolve,ms);
-   })
- }
+function timeout(ms) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  })
+}
 
- async function asyncPoint(ms,val){
-    await timeout(ms);
-    console.log(val);
+async function asyncPoint(ms, val) {
+  await timeout(ms);
+  console.log(val);
 
- }
+}
 
- asyncPoint(5000,'hello,word')
+asyncPoint(5000, 'hello,word')
 
 /**
  * 由于async函数返回的是Promise对象，可以作为await命令的参数，所以可以将上面的代码
  * 写成下面的这种形式：
  */
- async function timeout(ms){
-  new Promise((resolve)=>{
-   setTimeout(resolve,ms);
- })
+async function timeout(ms) {
+  await new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  })
 }
 
-async function asyncPoint(ms,val){
+async function asyncPoint(ms, val) {
   await timeout(ms);
   console.log(val);
 

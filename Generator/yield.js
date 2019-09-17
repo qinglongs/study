@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-17 16:02:10
- * @LastEditTime: 2019-09-17 16:43:19
+ * @LastEditTime: 2019-09-17 17:41:12
  * @LastEditors: Please set LastEditors
  */
 
@@ -16,14 +16,14 @@
  * 1.遇到yield表达式，就暂停执行后面的操作，并将紧跟在yield后面的那个表达式的值，作为返回的
  * 对象的value属性值。
  * 2.下一次调用next方法时，再继续往下执行，直到遇到下一个yield表达式。
- * 3.如果没有再遇到新的yield表达式，就一直运行到函数结束，直到return语句为止，并将return语句后面的表达式的值
+ * 3.如果没有再遇到新的yield表达式，就一直运行到函数结束，直到遇到return语句为止，并将return语句后面的表达式的值
  * 作为返回的对象的value属性值。
  * 4.如果该函数没有return语句，则返回的对象的value属性值为undefined。
  * 5.yield表达式只能用在Generator函数里面，用在其他函数内部会报错。
  * 6.yield表达式如果要用在另一个表达式之中，必须放在圆括号里面。
  * 7.yield表达式用在赋值表达式右边或用过函数参数，可以不加括号。
  * 
- * *****需要注意的是，yield表达式后面的表达式，只有当调用next方法，内部指针指向该语句时才会执行，等于为javascript提供了手动的惰性求值****
+ * **需要注意的是，yield表达式后面的表达式，只有当调用next方法，内部指针指向该语句时才会执行，等于为javascript提供了手动的惰性求值**
  */
 
 // 例子：
@@ -63,7 +63,18 @@ let flat = function* (a) {
   }
 }
 
-for (var f of flat(arr)) {
-  console.log(f);
-}
+var f = flat(arr);
+
+console.log(f.next());
+console.log(f.next());
+console.log(f.next());
+console.log(f.next());
+console.log(f.next());
+console.log(f.next());
+console.log(f.next());
+
+
+// for (var f of flat(arr)) {
+//   console.log(f);
+// }
 
