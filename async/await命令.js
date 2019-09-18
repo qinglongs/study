@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-17 11:32:26
- * @LastEditTime: 2019-09-17 18:20:13
+ * @LastEditTime: 2019-09-18 09:55:04
  * @LastEditors: Please set LastEditors
  */
 /**
@@ -11,7 +11,7 @@
  */
 
 async function foo() {
-  return await 123 //await 可以去掉,因为await后买你跟的不是Promise对象
+  return await 123 //await 可以去掉,因为await后面跟的不是Promise对象
 }
 
 foo().then(res => console.log(res));  //123
