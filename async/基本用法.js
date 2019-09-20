@@ -25,16 +25,14 @@
  * 1.指定多少毫秒后输出一个值：
  */
 
-function timeout(ms) {
+function timeout(ms, val) {
   return new Promise((resolve) => {
-    setTimeout(resolve, ms);
+    setTimeout(resolve, ms, val);
   })
 }
 
 async function asyncPoint(ms, val) {
-  await timeout(ms);
-  console.log(val);
-
+  return await timeout(ms, val);
 }
 
 asyncPoint(5000, 'hello,word')
@@ -52,5 +50,4 @@ async function timeout(ms) {
 async function asyncPoint(ms, val) {
   await timeout(ms);
   console.log(val);
-
 }

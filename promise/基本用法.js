@@ -112,11 +112,11 @@ getJSON("/post.json")
  * Error对象的实例，表示抛出的错误；resolve函数参数除了正常值以外，还可能是另一个Prmoise的实例
  */
 
-const p1 = new Promsie((resolve, reject) => {
+const p1 = new Promise((resolve, reject) => {
   setTimeout(reject, 3000, new Error('fail'));
 })
 
-const p2 = new Promsie((resolve, reject) => {
+const p2 = new Promise((resolve, reject) => {
   //do something......
   setTimeout(resolve, 1000, p1);
 })
