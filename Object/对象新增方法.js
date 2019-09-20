@@ -17,7 +17,7 @@ console.log(Object.is('foo', 'foo')) //true
 console.log(Object.is(+0, -0)) //false
 console.log(Object.is(NaN, NaN)) //true
 
-//ES5可以通过下面的代码，部署Object
+//ES5可以通过下面的代码，部署Object.is方法
 
 Object.defineProperty(Object, 'is', {
   value: function (x, t) {

@@ -1,10 +1,3 @@
-/*
- * @Description: In User Settings Edit
- * @Author: your name
- * @Date: 2019-09-19 11:21:00
- * @LastEditTime: 2019-09-19 11:32:56
- * @LastEditors: Please set LastEditors
- */
 /**
  * ES6允许使"箭头"=>定义函数
  */
@@ -65,6 +58,6 @@ let getTempItem = id => ({ id: id, name: 'temp' });  //不报错
  * 下面是rest参数与箭头函数结合的例子
  */
 
- const numbers = (...nums) =>nums;
+const numbers = (...nums) => nums;
 
- numbers(1,2,3,4,5,6,7,8,9); //[1,2,3,4,5,6,7,8,9]
+numbers(1, 2, 3, 4, 5, 6, 7, 8, 9); //[1,2,3,4,5,6,7,8,9]
