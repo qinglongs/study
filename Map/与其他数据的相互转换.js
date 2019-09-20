@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-18 15:50:52
- * @LastEditTime: 2019-09-18 17:55:15
+ * @LastEditTime: 2019-09-19 17:50:32
  * @LastEditors: Please set LastEditors
  */
 /**
@@ -60,3 +60,4 @@ function objToMap(obj) {
 }
 
 console.log(objToMap({yes: true, no: false})) //Map { 'yes' => true, 'no' => false }
+
