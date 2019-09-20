@@ -1,5 +1,12 @@
 /**
  * 有时需要将现有对象转为Promise对象，Promise.resolve方法就起到这个作用
+ * 
+ * 1.参数是一个Promise实例，那么Promise.resolve将不做任何修改、原封不动的返回这个实例。
+ * 2.参数是一个thenbale对象，thenable对象指的是具有then方法的对象。Promsie.resolve方法会将
+ * 这个对象转为Promsie对象，然后就立即执行thenable对象的then方法。
+ * 3.参数不具有then方法的对象，或者根本就不是对象，则Promise.resolve方法返回一个新的Promsie对象，状态为resolved。
+ * 4.不带任何参数，Promsie。resolve方法允许调用时不带参数，直接返回一个resolved状态的promise对象。
+ * 如果需要得到一个promise对象，比较方便的方法就是直接调用Promise.resolve方法。
  */
 
 Promise.resolve($.ajax({
