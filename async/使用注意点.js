@@ -21,7 +21,6 @@ async function myFunction(){
 }
 
 // 另一种写法：
-
 async function myFunction(){
   await somethingThatReturnsAPromise()
   .catch(e=>console.log(e))
