@@ -49,8 +49,8 @@ class Sleep {
  * async实现程序休眠效果
  */
 
-function sleep(interval) {
-  return new Promise(resolve => {
+async function sleep(interval) {
+  return await new Promise(resolve => {
     setTimeout(resolve, interval);
   })
 }
@@ -86,16 +86,16 @@ f()
  */
 
 async function rejectf() {
-  await Promise.reject('rejectf出错了');
+  await Promise.reject('rejectf出错了')
   await Promise.resolve('hello promise'); //不会执行
 }
 
 rejectf()
   .then((res) => console.log(res))
-  .then((err) => console.log(err));
+  .catch((err) => console.log(err));
 
 /**
- * 我们希望即使前一个异步操作失败，也不要中断后面的异步操作，这是可以
+ * 我们希望即使前一个异步操作失败，也不要中断后面的异步操作，这时可以
  * 将第一个await放在try...catch结构里面，不管这个异步操作是否成功，第二个
  * await都会执行
  */
