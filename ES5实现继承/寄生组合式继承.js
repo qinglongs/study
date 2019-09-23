@@ -12,14 +12,14 @@ function fatherFn(...arr) {
 fatherFn.prototype.fatherFnSome = '父类原型对象的属性或者方法';
 
 function sonFn() {
-  fatherFn.call(this, '借用构造继承');
+  fatherFn.call(this, '借用构造继承'); //这里是借用构造函数继承
   this.obkoro1 = '子类的this属性';
 }
 
-function inheritPrototype(son, father) {
+function inheritPrototype(son, father) { //这里是寄生式继承
   const fatherFnPrototype = Object.create(father.prototype);
-  son.prototype = fatherFnPrototype;
-  son.prototype.constructor = son;
+  son.prototype = fatherFnPrototype;  //将son的__proto__指向father.prototype
+  son.prototype.constructor = son; //将son原型指向的构造函数指向 son
 }
 
 inheritPrototype(sonFn, fatherFn);

@@ -3,7 +3,7 @@ function fatherFn(...arr) {
   this.params = arr;
 }
 
-fatherFn.prototype.fatherFnSome = '父类原型对象的属性或者方法';
+fatherFn.prototype.fatherFnSome = '父类原型对象的属性或者方法';  //继承不到父类原型对象的属性或者方法
 
 function sonFn(fatherParams, ...sonParams) {
   fatherFn.call(this, ...fatherParams); //传递参数给父类构造函数

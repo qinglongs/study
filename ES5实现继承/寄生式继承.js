@@ -16,4 +16,3 @@ function createAnother(original) {
   clone.obkoro1 = '封装继承过程'; // 属性
   return clone; // 返回这个对象
 }
-
