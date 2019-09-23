@@ -37,3 +37,24 @@ async function test() {
 }
 test().then(v => console.log(v));
 console.log('2')
+
+
+Promise.resolve('aaaa').then(data => console.log(data));
+
+//等价于：
+new Promise(resolve => {
+  resolve('aaaa');
+}).then(data => console.log(data));
+
+
+//thenable对象 立即执行该对象内部的then方法,这是调用的then方法也会分配到微任务队列
+const thenable = {
+  then(resolve) {
+    console.log('thenable') //2
+  }
+}
+Promise.resolve(thenable)
+setTimeout(() => {
+  console.log('setTimeout')//3
+})
+console.log('out')//1

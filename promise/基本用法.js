@@ -45,7 +45,7 @@ let promise1 = new Promise((resolve, reject) => {
 })
 
 promise1.then(() => {
-  console.log('resolved3')
+  console.log('resolved3')//3
 }) //3
 
 console.log('HI2'); //2

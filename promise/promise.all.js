@@ -22,7 +22,7 @@ const p = Promise.all([p1, p2, p3]);
 
 /**
  * 上面代码中，Promise.all方法接受一个数组作为参数，p1,p2,p3都是promise实例，如果不是
- * 就会先调用Promsie。resolve方法，将参数转为Promise实例，再进一步处理
+ * 就会先调用Promsie.resolve方法，将参数转为Promise实例，再进一步处理
  * Priomise.all方法的参数可以不是数组，但必须具有Iterator接口，且返回的每个成员都是Promise实例
  * 
  * p的状态由p1,p2,p3决定，分成两种情况：

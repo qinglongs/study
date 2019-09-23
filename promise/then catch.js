@@ -16,6 +16,7 @@
 
 const promise = new Promise((resolve, reject) => {
   throw Error('test');
+  resolve('aaa');
 });
 
 promise.catch((error) => console.log(error))

@@ -1,10 +1,4 @@
-/*
- * @Description: In User Settings Edit
- * @Author: your name
- * @Date: 2019-08-29 17:29:48
- * @LastEditTime: 2019-08-30 09:48:20
- * @LastEditors: Please set LastEditors
- */
+
 // const p1 = new Promise((resolve, reject) => {
 //   console.log('p1');
 
@@ -31,19 +25,19 @@
 
 
 new Promise((resolve, reject) => {
-  console.log('promise1');
+  console.log('promise1');//1
   resolve(new Promise((reslove, reject) => {
-    console.log('promise2')
+    console.log('promise2')//2
     fetch('https://jsonplaceholder.typicode.com/todos/1', {
       method: 'GET',
       mode: 'cors'
     })
       .then(data => {
-        console.log('fetchthen1')
+        console.log('fetchthen1')//3
         setTimeout(() => {
-          console.log('settimeout1')
+          console.log('settimeout1')//4
           reslove(data.json())
         })
       })
   }));
-}).then(data => { console.log('then2') });
+}).then(data => { console.log('then2') });//5
