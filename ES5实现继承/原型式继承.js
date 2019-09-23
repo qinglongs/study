@@ -15,7 +15,7 @@ const me = Object.create(person);
 me.name = 'Matthew';
 me.isHuman = true;
 
-me.printIntrduction();
+me.printIntrduction(); //My name is Matthew. Am I human? true
 
 //Object.create()实现原理：我觉得有点像工厂模式
 function cloneObject(obj) {
