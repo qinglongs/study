@@ -25,7 +25,7 @@ class MyPromise {
 
         // 执行handle
         try {
-            handle(this._resolve.bind(this), this._reject.bind(this)) //将参数运行的this绑定到MyPromise
+            handle(this._resolve.bind(this), this._reject.bind(this)) //_resolve和_reject运行时的 this只想MyPromise
         } catch (err) {
             this._reject(err)
         }
