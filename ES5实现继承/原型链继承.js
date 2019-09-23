@@ -1,23 +1,24 @@
-/**
- * 原型链继承：子类的原型指向父类的实例。
- * 缺点：
- * 1.由于原型链继承共享实例属性的缺点，用于引用类型传值，引用副本实例属性的修改必然会引起其他
- * 副本实例属性的修改，所以不常用。
- * 2.不能向父类构造函数传递参数，很不灵活。
- */
 
-function SuperType() {
-  this.color = ['red', 'blue', 'green'];
+function FatherFun(){
+  this.some = '父类的this属性'
 }
-function SubType() { }
-SubType.prototype = new SuperType;
 
-//创建第一个子实例：
-let instance1 = new SubType();
-instance1.color.push('yellow');
-console.log(instance1.color); //[ 'red', 'blue', 'green', 'yellow' ]
+FatherFun.prototype.fatherFnSome = '父类原型对象的属性或者方法';
 
-//创建第二个子实例： 
-let instance2 = new SubType();
-console.log(instance2.color); //[ 'red', 'blue', 'green', 'yellow' ]
+function SonFun(){
+  this.sonFnSome = '子类的this属性';
+}
 
+SonFun.prototype = new FatherFun();
+
+SonFun.prototype.say = '子类原型对象的属性或者方法'
+
+const sonFnInstace = new SonFun();
+
+console.log('子类的实例',sonFnInstace);
+
+/**
+ * 缺点：
+ * 1.父类使用this声明的属性被所有实例共享。
+ * 2.创建子类实例时，无法向父类构造函数传参，不够灵活。
+ */

@@ -24,9 +24,7 @@ class Point {
 
 }
 Point.prototype = {
-  constructor() {
-    return Point
-  },
+  constructor:Point,
   toString() {
 
   },
