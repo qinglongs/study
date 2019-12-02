@@ -4,7 +4,7 @@ const FULFILLED = 'FULFILLED' //成功
 const REJECTED = 'REJECTED' //失败
 
 // 判断变量否为function
-const isFunction = variable => typeof variable === 'function'
+const isFunction = variable => typeof variable === 'function';
 
 class MyPromise {
     constructor(handle) {
@@ -18,10 +18,10 @@ class MyPromise {
         this._value = undefined
 
         // 添加成功回调函数队列
-        this._fulfilledQueues = []
+        this._fulfilledQueues = [];
 
         // 添加失败回调函数队列
-        this._rejectedQueues = []
+        this._rejectedQueues = [];
 
         // 执行handle
         try {

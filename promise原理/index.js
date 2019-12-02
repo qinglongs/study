@@ -33,7 +33,7 @@ class MyPromise {
  * **状态只能由pending变为Fulfilled变为rejected，且状态改变之后不会再发生变化，会一直保存这个状态**
  * **Promise的值是指状态改变时传递给回调函数的值**
  * 上文中的handle函数包含resolve和reject两个参数，他们是两个函数，他们是两个函数，可以用于改变Promise的
- * 状态和传入Promise的值
+ * 状态和传入Promise的值 
  */
 
 //例子：
@@ -97,19 +97,19 @@ class MyPromise {
  * 如果onFulfilled或onRejected不是函数，其必须被忽略。
  * onFulfilled特性：
  * 1.当promise状态变为成功时必须调用，其第一个参数为promise成功状态传入的值(resolve传入的值)。
- * 2.在promsie状态改变前其不可被调用。
+ * 2.在promise状态改变前其不可被调用。
  * 3.其调用次数不可超过一次。
  *
  * onRejected特性：
- * 1.当peomsie状态变为失败时调用，其第一个参数为promise失败状态传入的值(reject执行时传入值)。
+ * 1.当promise状态变为失败时调用，其第一个参数为promise失败状态传入的值(reject执行时传入值)。
  * 2.在promise状态改变前其不可被调用。
  * 3.其调用次数不可以超过一次。
  * 
  * **多次调用**
  * then方法必须返回一个新的promise对象
- * promise2 = promise.then(onFulfilled,onRejected);
+ * promise2 = promise1.then(onFulfilled,onRejected);
  * 因此，promise支持链式调用
- * peomsie1.then(onFulfilled,onRejected).then(onFulfilled1,onRejected1);
+ * promise1.then(onFulfilled,onRejected).then(onFulfilled1,onRejected1);
  * 
  * **这里涉及Promise的执行规则，包括"值的传递"和"错误捕获"机制**
  * 1.如果onFulfilled或者onRejected返回一个值x，则运行下面的Promise解决过程[[Resolve]](promise2, x):
@@ -144,12 +144,12 @@ let promsie4 = promsie3.then(res => {
     })
 })
 
-promsie4.then(res => { console.log(res) }); //这里会等待peomise3的状态改变后再输出peomise3的值。
+promsie4.then(res => { console.log(res) }); //这里会等待promise3的状态改变后再输出promise4的值。
 
 
 
 /**
- * 如果onFulfilled或者onRejected抛出一个异常e，则peomsie1必须为失败(Rejected),并返回
+ * 如果onFulfilled或者onRejected抛出一个异常e，则promise1必须为失败(Rejected),并返回
  * 失败的值e,例如：
  */
 
@@ -164,7 +164,7 @@ let promise1 = promise.then(res => {
 promise1.then(res => {
     console.log(error);
 }, err => {
-    console.log(err);
+    console.log(err); //这里抛出一个异常
 })
 
 /**
@@ -272,11 +272,11 @@ class MyPromise {
 }
 
 /**
-         * 那返回的新的Promise对象什么时候改变状态？改变为那种状态呢？
-         * 根据上文中的then方法的规则，我们知道返回的新的Promsie对象的状态依赖于当前then方法回调函数执行的情况及
-         * 返回值，例如 then的参数是否为一个函数、回调函数执行是否出错，是否为Promise对象。
-         * 
-         */
+ * 那返回的新的Promise对象什么时候改变状态？改变为那种状态呢？
+ * 根据上文中的then方法的规则，我们知道返回的新的Promsie对象的状态依赖于当前then方法回调函数执行的情况及
+ * 返回值，例如 then的参数是否为一个函数、回调函数执行是否出错，是否为Promise对象。
+ * 
+ */
 
 // 添加then方法
 function then(onFulfilled, onRejected) {

@@ -75,7 +75,6 @@ class Publish {
   }
 
   // 发布通知
-
   publish(message, ...info) {
     const subscriber = this.messageMap[message];
     if (!subscriber || !subscriber.length) return this;
