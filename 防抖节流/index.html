@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./index.js"></script>
+</head>
+<body>
+    <button id='防抖'>防抖</button>
+    <button id='节流'>节流</button>
+    <script>
+        let time;
+        document.getElementById('防抖').onclick = 
+        function(){
+            clearTimeout(time);
+            time = setTimeout(function(){
+                console.log('aaaa')
+            },2000)
+        }
+
+        let bool = true;
+        document.getElementById('节流').onclick = function () {
+            if(bool) {
+                console.log('节流')
+                bool=false;
+                setTimeout(()=>{
+                    bool = true;
+                },2000)
+            }
+        }
+
+    </script>
+</body>
+</html>
